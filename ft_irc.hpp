@@ -3,10 +3,23 @@
 
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <stdlib.h>
 
-typedef struct s_info
+
+
+
+class	Server
 {
-	int	port;
-}				t_info;
+	private:
+		std::string		_port;
+		std::string		_password;
+
+	public:
+		Server( int port, std::string passcode);
+		~Server( void );
+
+		void	listen( void );
+}
 
 #endif
+
